@@ -21,5 +21,5 @@ if __name__ == "__main__":
     
     # TODO: Construct a Movie object!
     # TODO: Print the object!
-movie = title, director, year
+movie = Movie(title, director, year)
 print(movie)

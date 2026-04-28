@@ -1,11 +1,15 @@
 # utils.py
+from bank_account import BankAccount
+from person import Person
 def person_data():
-    nombre = input("Enter the person's name:")
-    numerodecuenta = int(input("Enter a 4-digit account number:"))
-    saldoinicial = float(input("Enter the initial balance:"))
-person = ()
-account = BankAccount(numerodecuenta, saldoinicial)
-person.accounts.append(account)
-pregunta = input("Are you done adding accounts? (yes/no): ")
-if pregunta == "yes":
-    break
+    nombre = input("Enter the person's name: ")
+    person = Person(nombre)
+    while True:
+        numerodecuenta = int(input("Enter a 4-digit account number: "))
+        saldoinicial = float(input("Enter the initial balance: "))
+        account = BankAccount(numerodecuenta, saldoinicial)
+        person.accounts.append(account)
+        pregunta = input("Are you done adding accounts? (yes/no): ")
+        if pregunta == "yes":
+            break
+    return person

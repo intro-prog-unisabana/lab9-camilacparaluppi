@@ -5,7 +5,7 @@ while True:
     comando = input("Enter command (A for ascent, D for descent, X to exit): ")
     if comando == "X":
         break
-    partes = comando.split()  
+    partes = comando.split()
     direccion = partes[0]
     pies = int(partes[1])
     if direccion == "A":

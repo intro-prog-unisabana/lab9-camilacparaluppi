@@ -15,3 +15,4 @@ def main():
             elif action == "D":
                 aircraft.descend(feet)
     print(f"Final altitude: {aircraft.altitude} feet")
+main()

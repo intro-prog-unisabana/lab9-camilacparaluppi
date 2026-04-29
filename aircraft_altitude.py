@@ -1,17 +1,17 @@
 from aircraft import Aircraft
-modeloaeronave = input("Enter aircraft model: ")
-plane = Aircraft(modeloaeronave)
-while True:
-    comando = input("Enter command (A for ascent, D for descent, X to exit): ").strip()
-    if comando == "X":
-        break
-    partes = comando.split()
-    if len(partes) != 2:
-        continue
-    direccion = partes[0]
-    pies = int(partes[1])
-    if direccion == "A":
-        plane.ascend(pies)
-    elif direccion == "D":
-        plane.descend(pies)
-print(f"Final altitude: {plane.altitude} feet")
+def main():
+    model = input("Enter aircraft model: ")
+    aircraft = Aircraft(model)
+    while True:
+        command = input("Enter command (A for ascent, D for descent, X to exit): ")
+        if command == "X":
+            break
+        parts = command.split()
+        if len(parts) == 2:
+            action = parts[0]
+            feet = int(parts[1])
+            if action == "A":
+                aircraft.climb(feet)
+            elif action == "D":
+                aircraft.descend(feet)
+    print(f"Final altitude: {aircraft.altitude} feet")
